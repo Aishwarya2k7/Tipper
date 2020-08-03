@@ -1,0 +1,80 @@
+html{
+  font-size:14px;
+  color:black;
+  font-family: 'Average',serif;
+}
+main{
+  max-width:40rem;
+  background:#FABB1A;
+  margin:1.2rem auto;
+  padding:2rem 1rem 3rem 1rem;
+  border-radius:25px;
+  box-shadow: 0 10px 40px 3px;
+
+}
+section{
+  background: #FFFFFF;
+  margin:2rem;
+  border-radius: 20px;
+  padding:2rem;
+  box-shadow: inset 0 5px 25px lightgray;
+  font-size:1.4rem;
+}
+h1{
+  margin:0;
+  text-align: center;
+}
+
+section > div{
+  padding:0.6rem 0;
+}
+
+.bill{
+  display:flex;
+}
+.bill label{
+  flex:1;
+  align-self:center ;
+}
+
+input[type="number"]{
+  flex:2rem;
+  padding:0.5rem 0.8rem;
+ background:#E7E3D7;
+ font-family: 'Average',serif;
+ border:none;
+ border-radius:20px;
+ font-size: 15px;
+ outline-color: #bbb9b2;
+ 
+}
+
+.space-btw{
+  display:flex;
+  justify-content: space-between;
+}
+.total{
+  font-size:1.3rem;
+  font-weight:bolder;
+}
+
+input[type="range"]{
+  appearance: none;
+  background:#EDE8D8;
+  width:95%;
+  height:3px;
+  outline-color: aliceblue;
+  border-radius: 20px;
+  margin:1.4rem 0;
+  padding:1.1rem;
+
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  appearance: none;
+  background: #FABB1A;
+  width:2rem;
+  height:2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
