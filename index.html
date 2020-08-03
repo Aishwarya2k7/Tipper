@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Average&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <main>
+  <main id="container">
     <h1>Tipper</h1>
 
     <section>
-      <div>
+      <div class="bill">
         <label for="billamt">Amount</label>
         <input type="number"id="billamt" placeholder="Your Amount" min="0"/>
       </div>
       <div>
-        <div>
+        <div class="space-btw">
         <label for="tipSlider">Select Tip</label>
-        <span id="tipPercent"></span>
+        <span id="tipPercent">0%</span>
         </div>
         <input type="range" id="tipSlider" value="0"/>
       </div>
-      <div>
+      <div class="space-btw">
         <span>Tip</span>
         <span id="tipValue"></span>
         
       </div>
       <hr/>
-      <div>
+      <div class="space-btw total">
         <span>Total</span>
         <span id="totalVal"></span>
       </div>
@@ -35,21 +37,49 @@
 
     <section>
       <div>
-        <div>
+        <div class="space-btw">
           <label for="splitSlider">Split</label>
           <span id="numPpl">1 person</span>
         </div>
         <input type="range"id="splitSlider" min="1" max="10" value="1"/>
       </div>
-      <div>
+      <div class="space-btw">
         <span>Bill each</span>
         <span id="billEach"></span>
       </div>
-      <div>
+      <div class="space-btw">
         <span>Tip each</span>
         <span id="tipEach"></span>
       </div>
     </section>
   </main>
+
+  <script>
+    function ppl(num){
+      if(num>1) return (num + " people");
+      else return (num+ " person");
+    }
+    function update(){
+      let amt = Number(document.getElementById('billamt').value);
+      let tipPercent = document.getElementById('tipSlider').value;
+      let numPpl = document.getElementById('splitSlider').value;
+
+      let tipValue = amt*(tipPercent/100);
+      let total = amt+tipValue;
+      let tipEach = tipValue/numPpl;
+      let billEach= total/numPpl;
+
+      document.getElementById('tipPercent').innerHTML = tipPercent +"%";
+      document.getElementById('tipValue').innerHTML = "&#8377;"+tipValue.toFixed(0);
+      document.getElementById('numPpl').innerHTML=
+      ppl(numPpl);
+      document.getElementById('totalVal').innerHTML="&#8377;"+total.toFixed(0);
+      document.getElementById('billEach').innerHTML="&#8377;"+billEach.toFixed(0);
+      document.getElementById('tipEach').innerHTML="&#8377;"+tipEach.toFixed(0);
+    }
+let container=document.getElementById('container');
+container.addEventListener('input',update);
+
+  </script>
 </body>
 </html>
