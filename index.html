@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>Tipper</h1>
+
+    <section>
+      <div>
+        <label for="billamt">Amount</label>
+        <input type="number"id="billamt" placeholder="Your Amount" min="0"/>
+      </div>
+      <div>
+        <div>
+        <label for="tipSlider">Select Tip</label>
+        <span id="tipPercent"></span>
+        </div>
+        <input type="range" id="tipSlider" value="0"/>
+      </div>
+      <div>
+        <span>Tip</span>
+        <span id="tipValue"></span>
+        
+      </div>
+      <hr/>
+      <div>
+        <span>Total</span>
+        <span id="totalVal"></span>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div>
+          <label for="splitSlider">Split</label>
+          <span id="numPpl">1 person</span>
+        </div>
+        <input type="range"id="splitSlider" min="1" max="10" value="1"/>
+      </div>
+      <div>
+        <span>Bill each</span>
+        <span id="billEach"></span>
+      </div>
+      <div>
+        <span>Tip each</span>
+        <span id="tipEach"></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
